@@ -79,3 +79,4 @@ portfolio/
 │   └── i18n/              # Configuration multilingue
 ├── public/
 └── package.json
+```
