@@ -1,0 +1,178 @@
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 12vh;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(5px); /* Flou léger */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.7); /* Transparence légère */
+  backdrop-filter: blur(10px); /* Flou pour ce qui est derrière la navbar */
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 100%;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+.logo:hover {
+  transform: scale(1.2); /* Zoom au survol du logo */
+}
+
+.logo span {
+  color: #077b32;
+  text-shadow: 0 0 10px #077b32;
+}
+
+/* Liens */
+.links {
+  display: flex;
+  justify-content: center; /* Centre les liens */
+  flex-grow: 1; /* Fait en sorte que les liens prennent tout l'espace entre le logo et les boutons */
+}
+
+.links a {
+  color: white;
+  position: relative;
+  font-size: 1rem; /* Police plus petite */
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s linear;
+}
+
+.links a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #077b32;
+  transition: width 0.2s linear;
+}
+
+.links a:hover::before {
+  width: 100%;
+}
+
+.links a:hover {
+  color: #077b32;
+}
+
+/* Lien actif */
+.link.active a {
+  color: #077b32;
+  font-weight: bold;
+}
+
+/* Menu hamburger */
+.hamburg {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.hamburg:hover {
+  color: green;
+  transition: 0.7s;
+}
+
+@media (max-width: 884px) {
+  .navbar {
+    height: 8vh;
+  }
+  .hamburg {
+    display: block;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 8vh;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .links.active {
+    display: flex;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-end; /* Aligne les contrôles à droite */
+}
+
+.language-selector select {
+  font-size: 1rem;
+  padding: 8px;
+  background-color: #077b32;
+  border: 1px solid #077b32;
+  color: white;
+  border-radius: 5px;
+}
+
+.language-selector select:hover {
+  background-color: #055d24;
+}
+
+.language-selector option {
+  background-color: white; /* Style de l'option */
+  color: black;
+}
+
+.theme-toggle {
+  font-size: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--theme-icon-color);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+  color: #f39c12; /* Couleur dorée pour un effet visuel */
+}
+
+.theme-icon {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.theme-toggle .theme-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Responsive */
+@media (max-width: 440px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .links a {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+}

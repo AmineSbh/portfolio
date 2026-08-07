@@ -1,0 +1,66 @@
+/* Section Projects */
+#Projects {
+  min-height: 88vh;
+  height: auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Conteneur principal */
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-swiper {
+  width: 95%;
+}
+
+/* Boutons de navigation */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #077b32 !important;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Assure qu'ils sont au-dessus des cartes */
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px;
+  color: white;
+}
+
+/* Ajuste la position des flèches */
+.swiper-button-prev {
+  left: 10px; /* Plus proche du conteneur */
+}
+
+.swiper-button-next {
+  right: 10px; /* Plus proche du conteneur */
+}
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+  .swiper-button-prev {
+    left: 5px; /* Encore plus proche sur mobile */
+  }
+
+  .swiper-button-next {
+    right: 5px; /* Encore plus proche sur mobile */
+  }
+}

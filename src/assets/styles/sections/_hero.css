@@ -1,0 +1,139 @@
+/* Conteneur principal */
+.main-container {
+  width: 100%;
+  min-height: 88vh;
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+  justify-content: center;
+  align-items: center;
+  margin-top: 12vh; /* Ajuste l'espace sous la navbar */
+  padding: 20px; /* Ajoute du padding pour éviter le débordement */
+  text-align: center; /* Centrage du texte pour un meilleur rendu */
+  gap: 80px; /* Ajoute un espace entre les éléments enfants */
+}
+
+/* Conteneur image */
+.main-container .image {
+  position: relative;
+  width: clamp(
+    200px,
+    40%,
+    400px
+  ); /* Ajuste la taille de l'image selon l'écran */
+  height: auto; /* Laisse la hauteur s'ajuster automatiquement */
+  max-height: 65vh;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 50px #077b32;
+  transform-origin: center;
+  will-change: transform;
+}
+.main-container .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Animation */
+.main-container .image:hover {
+  animation: animate 1.5s ease-in-out infinite;
+}
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Contenu */
+.main-container .content {
+  width: 45%;
+  min-width: 300px; /* Empêche le texte de devenir trop étroit */
+  min-height: 100px;
+}
+
+/* Style des titres */
+.content h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.content h1 span {
+  color: #077b32;
+  text-shadow: 0 0 10px #077b32;
+}
+
+/* Texte de typewriter */
+.content .typewriter {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 600;
+  white-space: nowrap; /* Empêche le texte de sauter à la ligne */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ajoute "..." si le texte dépasse */
+}
+
+.content .typewriter-text {
+  color: #077b32;
+  text-shadow: 0 0 10px #077b32;
+}
+
+/* Style des paragraphes */
+.content p {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+
+/* Tablettes */
+@media (max-width: 884px) {
+  .main-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .main-container .content {
+    width: 80%;
+  }
+  .main-container .image {
+    width: 50%;
+    height: auto;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 500px) {
+  #Home {
+    min-height: auto;
+    margin-top: 8vh;
+  }
+  .main-container {
+    flex-direction: column;
+    height: auto;
+    margin: 1%;
+    min-height: 8vh;
+  }
+  .main-container .content {
+    width: 90%;
+  }
+  .main-container .image {
+    width: 60%;
+    height: auto;
+  }
+  .content h1 {
+    font-size: 1.8rem;
+  }
+  .content .typewriter {
+    font-size: 1.5rem;
+  }
+  .content p {
+    font-size: 1rem;
+  }
+  .main-container button {
+    margin-top: 15px;
+  }
+}

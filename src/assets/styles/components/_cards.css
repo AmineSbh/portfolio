@@ -1,0 +1,120 @@
+/* Styles de la carte */
+.box {
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.7rem 1rem rgba(0, 255, 0, 0.3);
+  overflow: hidden;
+  height: auto; /* Hauteur automatique */
+  min-height: 280px; /* Hauteur minimale légèrement réduite */
+  background: #111;
+  border: 2px solid #077b32;
+  transition: transform 0.3s ease;
+  margin: 0 auto; /* Centrer les cartes */
+  width: 90%; /* Prendre toute la largeur disponible */
+}
+
+.box img {
+  height: 180px; /* Hauteur fixe pour l'image légèrement réduite */
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Contenu de la carte */
+.content-card {
+  position: absolute;
+  top: 85%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  transition: top 0.3s ease-in-out;
+}
+
+.box:hover .content-card {
+  top: 30%;
+}
+
+/* Titres et descriptions */
+.tag {
+  background: #077b32;
+  padding: 0.6rem; /* Padding réduit */
+  text-align: center;
+}
+
+.tag h3 {
+  margin: 0;
+  font-size: 1.4rem; /* Taille du titre réduite */
+  color: #000;
+}
+
+.desc {
+  padding: 1rem; /* Padding réduit */
+  flex-grow: 1;
+}
+
+.desc p {
+  font-size: 0.8rem; /* Taille de la description réduite */
+  line-height: 1.4;
+  color: #ddd;
+  margin-bottom: 1rem; /* Marge réduite */
+}
+
+/* Boutons */
+.btns {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.2rem; /* Padding réduit */
+  border-radius: 0.5rem;
+  font-size: 1rem; /* Taille du texte réduite */
+  color: #000;
+  background: #077b32;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn:hover {
+  background: #008f00;
+  transform: translateY(-2px);
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 768px) {
+  .box {
+    min-height: 240px; /* Hauteur minimale réduite */
+  }
+
+  .box img {
+    height: 130px; /* Hauteur de l'image réduite */
+  }
+
+  .content-card {
+    top: 80%; /* Ajuster la position du contenu */
+  }
+
+  .box:hover .content-card {
+    top: 20%; /* Ajuster la position au survol */
+  }
+
+  .tag h3 {
+    font-size: 1.2rem; /* Taille du titre réduite */
+  }
+
+  .desc p {
+    font-size: 0.9rem; /* Taille de la description réduite */
+  }
+
+  .btn {
+    padding: 0.5rem 1rem; /* Taille des boutons réduite */
+    font-size: 0.9rem; /* Taille du texte réduite */
+  }
+}

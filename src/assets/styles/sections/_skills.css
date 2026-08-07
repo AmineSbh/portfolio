@@ -1,0 +1,127 @@
+#Skills {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 40px 20px;
+  min-height: 88vh;
+  height: auto;
+}
+
+.skills-container {
+  display: flex; /* Disposition en flexbox */
+  justify-content: center; /* Centrer les catégories horizontalement */
+  gap: 20px; /* Espace entre les catégories */
+  flex-wrap: wrap; /* Permet aux catégories de se replier sur plusieurs lignes si nécessaire */
+  margin-top: 40px; /* Espace entre le titre et le contenu */
+  margin-inline: 40px;
+}
+
+.skills-category {
+  margin-inline: 60px; /* Espacement entre les catégories */
+  width: 250px; /* Limite la largeur des catégories */
+}
+
+.skills-category h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.skill p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #444;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 5px;
+  background-color: #077b32;
+}
+
+.progress-bar .progress {
+  transition: width 0.5s ease-in-out;
+}
+
+/* Media Queries */
+
+/* Pour tablette (768px ou moins) */
+@media (max-width: 768px) {
+  #Skills {
+    padding: 10px; /* Réduit le padding pour tablette */
+    height: auto;
+    margin-bottom: 7%;
+  }
+
+  .skills-container {
+    gap: 15px; /* Réduit l'espace entre les catégories */
+    margin-top: 20px; /* Réduit l'espacement avec le titre */
+    width: 80%;
+    justify-content: center; /* Centre les enfants horizontalement */
+    margin-left: auto; /* Centre le conteneur */
+    margin-right: auto; /* Centre le conteneur */
+  }
+
+  .skills-category {
+    width: 200px; /* Réduit la largeur des catégories */
+    margin-inline: 20px; /* Réduit l'espacement sur les côtés */
+  }
+
+  .skill p {
+    font-size: 1rem; /* Réduit la taille du texte */
+  }
+
+  .progress-bar {
+    height: 8px; /* Réduit la hauteur de la barre de progression */
+  }
+}
+
+/* Pour téléphone (480px ou moins) */
+@media (max-width: 480px) {
+  #Skills {
+    padding: 5px; /* Réduit encore le padding */
+    height: auto;
+    margin-bottom: 7%;
+  }
+
+  .skills-container {
+    flex-direction: column; /* Empile les catégories verticalement */
+    gap: 20px; /* Ajuste l'espace entre les catégories */
+    width: 80%;
+    justify-content: center; /* Centre les enfants horizontalement */
+    margin-left: auto; /* Centre le conteneur */
+    margin-right: auto; /* Centre le conteneur */
+  }
+
+  .skills-category {
+    width: 90%; /* Les catégories occupent 90% de la largeur */
+    margin-inline: 0; /* Supprime les marges latérales */
+    margin-top: 30px;
+  }
+
+  .skill p {
+    font-size: 0.9rem; /* Réduit encore la taille du texte */
+  }
+
+  .progress-bar {
+    height: 6px; /* Réduit davantage la hauteur de la barre de progression */
+  }
+}

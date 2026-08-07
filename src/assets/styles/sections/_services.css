@@ -1,0 +1,98 @@
+/* Conteneur principal */
+#Services {
+  background-color: rgba(35, 35, 35, 0.247);
+  min-height: 88vh;
+  height: auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+/* Liste des services */
+.services-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Espacement entre les cartes */
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne sur petits écrans */
+}
+
+/* Style des cartes de service */
+.service-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #077b32; /* Bordure néon verte */
+  box-shadow: 0 0 15px #077b32; /* Effet lumineux */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Effet au survol */
+}
+
+/* Icône */
+.service-icon {
+  margin-bottom: 1rem;
+}
+
+/* Titre des services */
+.service-card h3 {
+  color: #077b32;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Description */
+.service-card p {
+  color: #ddd;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #Services {
+    padding: 40px 15px;
+  }
+
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  #Services {
+    padding: 30px 10px;
+  }
+
+  .service-card {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+  }
+}
