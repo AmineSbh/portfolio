@@ -9,7 +9,7 @@
   margin: auto;
   padding: 60px 20px;
   margin-top: 40px;
-  background-color: rgba(35, 35, 35, 0.247);
+  background-color: var(--section-bg);
 }
 
 /* Conteneur général de la section */
@@ -37,7 +37,7 @@
   width: 30%;
   height: 45vh;
   overflow: hidden;
-  box-shadow: 0 0 50px #077b32;
+  box-shadow: 0 0 50px var(--accent);
   transform-origin: center;
   will-change: transform; /* Optimisation GPU */
 }

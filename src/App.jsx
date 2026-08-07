@@ -1,14 +1,8 @@
-import  { useEffect } from 'react'; 
-// useEffect est un "Hook" React qui permet d'exécuter du code à des moments précis
-
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import AOS from 'aos';
-// AOS (Animate On Scroll) est une bibliothèque pour créer des animations au défilement
-
 import 'aos/dist/aos.css';
-import { useLanguage } from './components/hooks/useLanguage'; 
-// Import d'un hook personnalisé pour gérer les langues
 
-// Import des composants
 import AboutSection from './components/sections/AboutSection';
 import ContactSection from './components/sections/ContactSection';
 import Footer from './components/layout/Footer';
@@ -20,31 +14,40 @@ import ProjectSection from './components/sections/ProjectSection';
 import ScrollToTopButton from './components/common/ScrollToTopButton';
 
 function App() {
-  // Récupère la langue actuelle et la fonction pour la changer
-  const { language, handleLanguageChange } = useLanguage(); 
+  const { t, i18n } = useTranslation();
 
-  // Configure AOS au chargement de l'application
   useEffect(() => {
-    AOS.init({ offset: 0 });
+    AOS.init({
+      offset: 0,
+      // Les animations au défilement sont désactivées si l'utilisateur a
+      // demandé une réduction des mouvements.
+      disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    });
   }, []);
 
-  return (
-    <div>
-      {/* Passer la langue et la fonction de changement à Navbar */}
-      <Navbar language={language} onLanguageChange={handleLanguageChange} />
-      
-      {/* Passer la langue à chaque composant */}
-      <MainSection language={language} />
-      <AboutSection language={language} />
-      <SkillsSection language={language} />
-      <ServicesSection language={language} />
-      <ProjectSection language={language} />
-      <ContactSection language={language} />
-      <Footer language={language} />
+  // Garde <html lang> et le titre alignés sur la langue affichée (SEO + a11y).
+  useEffect(() => {
+    document.documentElement.lang = i18n.resolvedLanguage || i18n.language;
+    document.title = t('meta.title');
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute('content', t('meta.description'));
+  }, [i18n.resolvedLanguage, i18n.language, t]);
 
-      {/* Bouton global */}
+  return (
+    <>
+      <Navbar />
+      <main>
+        <MainSection />
+        <AboutSection />
+        <SkillsSection />
+        <ServicesSection />
+        <ProjectSection />
+        <ContactSection />
+      </main>
+      <Footer />
       <ScrollToTopButton />
-    </div>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 /* Conteneur principal */
 #Services {
-  background-color: rgba(35, 35, 35, 0.247);
+  background-color: var(--section-bg);
   min-height: 88vh;
   height: auto;
   padding: 60px 20px;
@@ -27,9 +27,9 @@
 
 /* Style des cartes de service */
 .service-card {
-  background: rgba(0, 0, 0, 0.8);
-  border: 2px solid #077b32; /* Bordure néon verte */
-  box-shadow: 0 0 15px #077b32; /* Effet lumineux */
+  background: var(--surface-2);
+  border: 2px solid var(--accent); /* Bordure néon verte */
+  box-shadow: 0 0 15px var(--accent); /* Effet lumineux */
   padding: 2rem;
   border-radius: 10px;
   width: 300px;
@@ -48,14 +48,14 @@
 
 /* Titre des services */
 .service-card h3 {
-  color: #077b32;
+  color: var(--accent);
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 /* Description */
 .service-card p {
-  color: #ddd;
+  color: var(--text-muted);
   font-size: 1.2rem;
   line-height: 1.5;
 }

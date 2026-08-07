@@ -11,22 +11,24 @@
 
 /* Conteneur principal */
 .projects-container {
+  width: 100%; /* sans cette largeur, le conteneur se dimensionne sur son
+                  contenu et déborde du viewport sur petit écran */
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3.5rem;
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
 .projects-swiper {
-  width: 95%;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Boutons de navigation */
 .swiper-button-prev,
 .swiper-button-next {
-  color: #077b32 !important;
+  color: var(--accent) !important;
   top: 50%;
   transform: translateY(-50%);
   width: 50px;
@@ -45,22 +47,29 @@
   color: white;
 }
 
-/* Ajuste la position des flèches */
+/* Flèches positionnées dans la gouttière, hors des cartes */
 .swiper-button-prev {
-  left: 10px; /* Plus proche du conteneur */
+  left: 0;
 }
 
 .swiper-button-next {
-  right: 10px; /* Plus proche du conteneur */
+  right: 0;
 }
 
 /* Pour les petits écrans */
 @media (max-width: 768px) {
-  .swiper-button-prev {
-    left: 5px; /* Encore plus proche sur mobile */
+  .projects-container {
+    padding: 0 2.5rem;
   }
 
+  .swiper-button-prev,
   .swiper-button-next {
-    right: 5px; /* Encore plus proche sur mobile */
+    width: 38px;
+    height: 38px;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 16px;
   }
 }

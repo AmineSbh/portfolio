@@ -1,30 +1,38 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaEnvelope
-} from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+
+const links = [
+  { id: 'github', href: 'https://github.com/AmineSbh', label: 'GitHub', Icon: FaGithub },
+  {
+    id: 'linkedin',
+    href: 'https://www.linkedin.com/in/amine-sabbahi-a64036207/',
+    label: 'LinkedIn',
+    Icon: FaLinkedin,
+  },
+  { id: 'email', href: 'mailto:amine.sabbahi@gmail.com', label: 'Email', Icon: FaEnvelope },
+];
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="portfolio-footer">
       <div className="footer-content">
         <div className="social-links">
-          <a href="https://github.com/votrenom" target="_blank" rel="noopener noreferrer">
-            <FaGithub />
-          </a>
-          <a href="https://www.linkedin.com/in/amine-sabbahi-a64036207/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin />
-          </a>
-          <a href="https://twitter.com/votrenom" target="_blank" rel="noopener noreferrer">
-            <FaTwitter />
-          </a>
-          <a href="mailto:votre.email@example.com">
-            <FaEnvelope />
-          </a>
+          {links.map(({ id, href, label, Icon }) => (
+            <a
+              key={id}
+              href={href}
+              target={href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+              aria-label={label}
+            >
+              <Icon aria-hidden="true" />
+            </a>
+          ))}
         </div>
         <p className="copyright">
-          © {new Date().getFullYear()} Amine SABBAHI. Tous droits réservés.
+          {t('footer.copyrightText', { year: new Date().getFullYear() })}
         </p>
       </div>
     </footer>

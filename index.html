@@ -1,20 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amine Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Amine SABBAHI — Data Engineer | Python, PySpark, AWS</title>
+    <meta
+      name="description"
+      content="Data Engineer avec 3 ans d'expérience chez BPIFrance et La Poste. Expert Python, PySpark, AWS et architectures IA modernes (RAG, LangChain)."
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    <meta name="author" content="Amine SABBAHI" />
+    <meta name="theme-color" content="#077b32" />
+
+    <!-- Open Graph / LinkedIn -->
+    <!-- TODO: remplacer par l'URL finale du site une fois déployé -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Amine SABBAHI — Data Engineer" />
+    <meta
+      property="og:description"
+      content="Data Engineer expert Python, PySpark et AWS. Pipelines Big Data, industrialisation CI/CD et architectures IA (RAG, LangChain)."
     />
+    <meta property="og:image" content="/images/photo_linkdin.jpeg" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Amine SABBAHI — Data Engineer" />
+    <meta
+      name="twitter:description"
+      content="Data Engineer expert Python, PySpark et AWS. Pipelines Big Data, IA et Cloud."
+    />
+    <meta name="twitter:image" content="/images/photo_linkdin.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Amine SABBAHI",
+        "jobTitle": "Data Engineer",
+        "email": "mailto:amine.sabbahi@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Île-de-France",
+          "addressCountry": "FR"
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "ESIEA" },
+          { "@type": "CollegeOrUniversity", "name": "University of Michigan" }
+        ],
+        "knowsAbout": [
+          "Python",
+          "PySpark",
+          "Polars",
+          "AWS",
+          "Docker",
+          "CI/CD",
+          "LangChain",
+          "RAG",
+          "FastAPI",
+          "Snowflake"
+        ],
+        "sameAs": [
+          "https://github.com/AmineSbh",
+          "https://www.linkedin.com/in/amine-sabbahi-a64036207/"
+        ]
+      }
+    </script>
+
+    <!-- Applique le thème avant le premier paint pour éviter le flash de couleur -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+          document.documentElement.classList.add(theme + "-mode");
+        } catch (e) {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

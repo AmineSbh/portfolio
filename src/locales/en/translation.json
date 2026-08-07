@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Amine SABBAHI — Data Engineer | Python, PySpark, AWS",
+    "description": "Data Engineer with 3 years of experience at BPIFrance and La Poste. Expert in Python, PySpark, AWS and modern AI architectures (RAG, LangChain)."
+  },
   "nav": {
     "Home": "Home",
     "About": "About",
@@ -7,11 +11,21 @@
     "Projects": "Projects",
     "Contact": "Contact"
   },
+  "a11y": {
+    "language": "Choose language",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "toLightMode": "Switch to light mode",
+    "toDarkMode": "Switch to dark mode",
+    "scrollTop": "Back to top of page",
+    "skillLevel": "Proficiency level: {{level}}%"
+  },
   "main": {
     "greeting": "Hi, I'm",
     "iam": "I'm a",
     "intro": "Data Engineer with 3 years of experience, expert in Python, PySpark and AWS. I transform raw data into strategic solutions.",
     "download": "Download CV",
+    "imageAlt": "Profile picture of Amine SABBAHI",
     "roles": {
       "data_engineer": "DATA ENGINEER",
       "developer": "AI & BIG DATA EXPERT"
@@ -19,53 +33,49 @@
   },
   "about": {
     "title": "About Me",
+    "imageAlt": "Portrait of Amine SABBAHI",
     "description": "I'm Amine SABBAHI, a Senior Data Engineer with 3 years of experience at BPIFrance and La Poste. Expert in Python, PySpark and AWS, I specialize in Big Data pipeline design, software industrialization (CI/CD) and modern AI architectures (RAG, LangChain). Graduate from ESIEA in Data & AI with an exchange at the University of Michigan, I combine technical rigor and strategic vision to transform data into business value."
   },
   "skills": {
     "title": "My Skills",
     "categories": {
-      "programming": "Data Engineering",
-      "certifications": "Cloud & DevOps",
-      "development": "AI & Modern Stack",
-      "ml": "Certifications"
-    },
-    "levels": {
-      "beginner": "Beginner",
-      "intermediate": "Intermediate",
-      "advanced": "Advanced",
-      "expert": "Expert"
+      "data_engineering": "Data Engineering",
+      "cloud_devops": "Cloud & DevOps",
+      "ai_stack": "AI & Modern Stack"
     }
   },
   "services": {
     "title": "Services",
-    "webdev": {
+    "data_pipelines": {
       "title": "Data Pipelines & ETL",
       "description": "Design and optimization of distributed PySpark/Polars pipelines for massive data processing (Big Data)."
     },
-    "bots": {
+    "ai_rag": {
       "title": "AI Solutions & RAG",
       "description": "Development of intelligent assistants based on LangChain, vector databases and RAG architectures."
     },
-    "scraping": {
+    "cloud": {
       "title": "Cloud & Industrialization",
       "description": "Production deployment via CI/CD (GitHub Actions), AWS deployment and Docker containerization."
     }
   },
   "projects": {
     "title": "R&D Projects",
-    "language_app": {
+    "view": "View",
+    "code": "Code",
+    "rag_assistant": {
       "title": "RAG Document Assistant",
       "description": "RAG architecture based on LangChain and Supabase (Vector DB) for technical documentation querying. Hybrid Search, Re-ranking and Docker deployment."
     },
-    "pdf_reader": {
+    "multi_agents": {
       "title": "Multi-Agent System",
       "description": "Multi-agent system orchestrating autonomous workflows via OpenAI API. Full containerization with Docker."
     },
-    "commitment_tracker": {
+    "actuarial_pipelines": {
       "title": "Actuarial Pipelines",
       "description": "Internal Python libraries for AWS S3 data ingestion and actuarial calculations industrialization (Markov Chains, Chain Ladder)."
     },
-    "interview_prep": {
+    "analytics_dashboards": {
       "title": "Analytics Dashboards",
       "description": "Dash/Plotly applications for data visualization and strategic decision-making in enterprise."
     }
@@ -79,18 +89,12 @@
       "submit": "Send Message",
       "submitting": "Sending...",
       "success": "Message successfully sent!",
-      "error": "Error sending message. Please try again."
+      "error": "Error sending message. Please try again.",
+      "configError": "The form is not configured. Please email me directly at amine.sabbahi@gmail.com."
     }
   },
   "footer": {
-    "title": "Contact Me",
     "contactInfo": "Available for freelance missions and permanent positions.",
-    "address": "Paris Area, France",
-    "social": "Social Media",
-    "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "twitter": "Twitter",
-    "copyright": "Copyright",
-    "copyrightText": "© 2025 All rights reserved"
+    "copyrightText": "© {{year}} Amine SABBAHI. All rights reserved."
   }
 }

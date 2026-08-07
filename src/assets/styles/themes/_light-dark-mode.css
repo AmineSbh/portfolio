@@ -1,118 +1,23 @@
-/* Mode clair et mode sombre : Corps principal */
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* Les couleurs de thème sont pilotées par les jetons CSS de base/_globals.css.
+   Ce fichier ne conserve que les ajustements qui ne se résument pas à une
+   simple substitution de couleur. */
 
-body.light-mode {
-  background-color: #d7d7d7; /* Couleur de fond clair */
-  color: black; /* Texte sombre */
-}
-
-body.dark-mode {
-  background-color: black; /* Couleur de fond sombre */
-  color: white; /* Texte clair */
-}
-
-/* Navbar */
+/* Navbar : le flou d'arrière-plan n'a de sens que sur un fond translucide */
 nav {
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-body.light-mode nav {
-  background-color: rgba(215, 215, 215, 0.7); /* Transparence légère */
-  backdrop-filter: blur(10px); /* Flou pour ce qui est derrière la navbar */
-}
-
-body.dark-mode nav {
-  background-color: rgba(0, 0, 0, 0.7); /* Transparence légère */
-  backdrop-filter: blur(10px); /* Flou pour ce qui est derrière la navbar */
-}
-@media (max-width: 884px) {
-  body.light-mode .navbar .links {
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.7
-    ); /* Liens en noir pour le mode clair */
-  }
-  body.dark-mode .navbar .links {
-    background-color: rgba(0, 0, 0, 0.9); /* Liens en noir pour le mode clair */
-  }
-}
-
-/* card */
-/* Mode clair et sombre pour les cartes */
-body.light-mode .project-card {
-  background-color: #fff; /* Fond clair pour les cartes */
-  color: #333; /* Texte sombre pour les cartes */
-}
-
-body.dark-mode .project-card {
-  background-color: #333; /* Fond sombre pour les cartes */
-  color: #fff; /* Texte clair pour les cartes */
-}
-
-/* Styles pour le bouton dans les cartes */
-body.light-mode .project-card button {
-  background-color: #4caf50; /* Couleur du bouton en mode clair */
-  color: white; /* Texte du bouton en mode clair */
-}
-
-body.dark-mode .project-card button {
-  background-color: #45a049; /* Couleur du bouton en mode sombre */
-  color: white; /* Texte du bouton en mode sombre */
-}
-
-/* Styles pour le survol des cartes */
-body.light-mode .project-card:hover {
-  background-color: #f0f0f0; /* Fond clair au survol */
-}
-
-body.dark-mode .project-card:hover {
-  background-color: #444; /* Fond sombre au survol */
-}
-
-/* Logo */
-.logo {
-  transition: color 0.3s ease;
-}
-
-body.light-mode .logo {
-  color: black;
-}
-
-body.dark-mode .logo {
-  color: white;
-}
-
-/* Logo accent (span) */
-.logo span {
-  transition: color 0.3s ease;
-}
-
-body.light-mode .logo span {
-  color: #077b32;
-}
-
-body.dark-mode .logo span {
+/* Accent du logo légèrement assombri en mode sombre (rendu d'origine) */
+:root.dark-mode .logo span {
   color: #0a4b21;
 }
 
-/* Liens - mode clair */
-body.light-mode .navbar .links a {
-  color: black; /* Liens en noir pour le mode clair */
+:root.light-mode .logo span {
+  color: var(--accent);
 }
 
-/* Contenu principal */
-.main-container .content {
-  transition: color 0.3s ease;
-}
-
-body.light-mode .main-container .content {
-  color: black;
-}
-
-body.dark-mode .main-container .content {
-  color: white;
+/* Le portrait perd son halo vert saturé sur fond clair */
+:root.light-mode .main-container .image,
+:root.light-mode .about-container .image {
+  box-shadow: 0 0 35px rgba(7, 123, 50, 0.45);
 }

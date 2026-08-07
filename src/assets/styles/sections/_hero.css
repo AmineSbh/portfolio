@@ -24,7 +24,7 @@
   max-height: 65vh;
   border-radius: 100%;
   overflow: hidden;
-  box-shadow: 0 0 50px #077b32;
+  box-shadow: 0 0 50px var(--accent);
   transform-origin: center;
   will-change: transform;
 }
@@ -54,7 +54,8 @@
 /* Contenu */
 .main-container .content {
   width: 45%;
-  min-width: 300px; /* Empêche le texte de devenir trop étroit */
+  min-width: min(300px, 100%); /* Ne force pas un débordement sur petit écran */
+  max-width: 100%;
   min-height: 100px;
 }
 
@@ -64,8 +65,8 @@
 }
 
 .content h1 span {
-  color: #077b32;
-  text-shadow: 0 0 10px #077b32;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
 }
 
 /* Texte de typewriter */
@@ -75,11 +76,24 @@
   white-space: nowrap; /* Empêche le texte de sauter à la ligne */
   overflow: hidden;
   text-overflow: ellipsis; /* Ajoute "..." si le texte dépasse */
+  min-width: 0; /* autorise la troncature au lieu d'élargir le parent */
+  max-width: 100%;
 }
 
 .content .typewriter-text {
-  color: #077b32;
-  text-shadow: 0 0 10px #077b32;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+.content .typewriter-caret {
+  color: var(--accent);
+  animation: caret-blink 1s step-end infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* Style des paragraphes */
@@ -133,7 +147,7 @@
   .content p {
     font-size: 1rem;
   }
-  .main-container button {
+  .main-container .custom-btn {
     margin-top: 15px;
   }
 }

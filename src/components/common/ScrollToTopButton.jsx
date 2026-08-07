@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function ScrollToTopButton() {
+  const { t } = useTranslation();
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -20,9 +22,10 @@ function ScrollToTopButton() {
 
   return (
     <button
+      type="button"
       onClick={scrollToTop}
       className="scroll-to-top"
-      aria-label="Retour en haut de la page"
+      aria-label={t('a11y.scrollTop')}
     >
       ↑
     </button>

@@ -1,27 +1,37 @@
-/* button.css */
-button {
+/* button.css — styles réservés aux boutons d'action (.custom-btn).
+   Auparavant appliqués à l'élément `button` global, ce qui déformait le menu
+   hamburger, le bouton de thème et le bouton « retour en haut ». */
+.custom-btn {
+  display: inline-flex;
   width: 50%;
   height: 6vh;
   margin: 30px;
-  background-color: #077b32;
-  color: white;
-  border: none;
+  background-color: var(--accent);
+  color: #fff;
+  border: 2px solid transparent;
   outline: none;
   font-size: 120%;
   font-weight: 700;
   border-radius: 5px;
-  transition: 0.3s !important;
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
+  transition: 0.3s;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-button:hover {
+.custom-btn:hover:not(:disabled) {
   scale: 1.1;
-  color: #077b32;
-  border: 2px solid #077b32;
+  color: var(--accent);
+  border-color: var(--accent);
   background-color: transparent;
-  font-weight: 700;
-  box-shadow: 0 0 40px #077b32;
+  box-shadow: 0 0 40px var(--accent);
+}
+
+.custom-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* Scroll to Top Button */
@@ -48,6 +58,6 @@ button:hover {
 
 .scroll-to-top:hover {
   transform: scale(1.1);
-  background-color: #077b32;
+  background-color: var(--accent);
   box-shadow: 0 0 15px rgba(7, 123, 50, 0.5);
 }

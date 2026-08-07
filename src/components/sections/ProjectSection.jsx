@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
@@ -8,49 +7,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import Card from "../common/Card";
+import { projects } from "../../data/projects";
 
 function ProjectSection() {
   const { t } = useTranslation();
-  const [activeCard, setActiveCard] = useState(null);
-
-  const projects = [
-    {
-      id: 1,
-      image: "language_app.jpg",
-      title: t("projects.language_app.title"),
-      description: t("projects.language_app.description"),
-      viewLink: "#",
-      codeLink: "#",
-    },
-    {
-      id: 2,
-      image: "pdf_reader.jpg",
-      title: t("projects.pdf_reader.title"),
-      description: t("projects.pdf_reader.description"),
-      viewLink: "#",
-      codeLink: "#",
-    },
-    {
-      id: 3,
-      image: "commitment_tracker.jpg",
-      title: t("projects.commitment_tracker.title"),
-      description: t("projects.commitment_tracker.description"),
-      viewLink: "#",
-      codeLink: "#",
-    },
-    {
-      id: 4,
-      image: "interview_prep.jpg",
-      title: t("projects.interview_prep.title"),
-      description: t("projects.interview_prep.description"),
-      viewLink: "#",
-      codeLink: "#",
-    },
-  ];
-
-  const handleCardClick = (id) => {
-    setActiveCard(activeCard === id ? null : id);
-  };
 
   return (
     <section id="Projects">
@@ -64,16 +24,21 @@ function ProjectSection() {
           spaceBetween={15}
           slidesPerView={1}
           navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
           }}
           pagination={{ clickable: true, dynamicBullets: true }}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
-            reverseDirection: false, // Défilement de droite à gauche
+            pauseOnMouseEnter: true,
           }}
-          loop={true}
+          // `loop` exige au moins deux fois plus de slides que n'en affiche le
+          // plus large breakpoint (3) ; avec 4 projets Swiper le refuse et
+          // journalise un avertissement. `rewind` revient au premier slide
+          // sans dupliquer de slides.
+          loop={false}
+          rewind
           breakpoints={{
             480: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
@@ -83,18 +48,16 @@ function ProjectSection() {
         >
           {projects.map((project) => (
             <SwiperSlide key={project.id}>
-              <div
-                onClick={() => handleCardClick(project.id)}
-                className={activeCard === project.id ? "active" : ""}
-              >
-                <Card
-                  image={project.image}
-                  title={project.title}
-                  description={project.description}
-                  viewLink={project.viewLink}
-                  codeLink={project.codeLink}
-                />
-              </div>
+              <Card
+                Icon={project.Icon}
+                title={t(project.titleKey)}
+                description={t(project.descriptionKey)}
+                tags={project.tags}
+                viewLink={project.viewLink}
+                codeLink={project.codeLink}
+                viewLabel={t("projects.view")}
+                codeLabel={t("projects.code")}
+              />
             </SwiperSlide>
           ))}
 

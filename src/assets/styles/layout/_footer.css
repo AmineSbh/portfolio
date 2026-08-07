@@ -1,6 +1,6 @@
 .portfolio-footer {
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: var(--footer-bg);
+  color: var(--text);
   padding: 30px 0;
   text-align: center;
 }
@@ -20,13 +20,20 @@
   margin-bottom: 20px;
 }
 
-.social-links a {
+.portfolio-footer .social-links a {
+  width: auto;
+  height: auto;
+  margin: 0;
+  border: none;
+  border-radius: 0;
   color: #4caf50;
   font-size: 24px;
   transition: color 0.3s ease;
 }
 
-.social-links a:hover {
+.portfolio-footer .social-links a:hover {
+  scale: 1.15;
+  background-color: transparent;
   color: #81c784;
 }
 
@@ -40,7 +47,7 @@
     gap: 15px;
   }
 
-  .social-links a {
+  .portfolio-footer .social-links a {
     font-size: 20px;
   }
 }

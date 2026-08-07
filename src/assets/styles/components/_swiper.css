@@ -1,31 +1,24 @@
-/* .swiper-button-next,
-.swiper-button-prev {
-  color: #ffd900 !important;
-  width: 40px !important;
-  height: 40px !important;
-  transition: opacity 0.3s ease;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 1.5rem !important;
-}
-
+/* Personnalisation Swiper aux couleurs du site (les puces et flèches par
+   défaut sont bleues : #007aff). */
 .swiper-pagination-bullet {
-  background: #fff !important;
-  opacity: 0.7 !important;
-  width: 12px !important;
-  height: 12px !important;
+  background: var(--text) !important;
+  opacity: 0.4 !important;
+  width: 10px !important;
+  height: 10px !important;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
 }
 
 .swiper-pagination-bullet-active {
-  background: #ffd900 !important;
+  background: var(--accent) !important;
   opacity: 1 !important;
 }
 
-@media (max-width: 768px) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    display: none !important;
-  }
-} */
+.projects-swiper {
+  padding-bottom: 40px; /* Espace pour la pagination sous les cartes */
+}
+
+/* Les slides d'une même vue partagent la hauteur de la plus haute */
+.projects-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}

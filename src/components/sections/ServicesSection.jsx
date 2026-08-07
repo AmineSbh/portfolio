@@ -7,21 +7,21 @@ function ServicesSection() {
   const services = [
     {
       id: 1,
-      icon: <FaDatabase size={50} color="#077b32" />,
-      title: t('services.webdev.title'),
-      description: t('services.webdev.description'),
+      icon: <FaDatabase size={50} color="#077b32" aria-hidden="true" />,
+      title: t('services.data_pipelines.title'),
+      description: t('services.data_pipelines.description'),
     },
     {
       id: 2,
-      icon: <FaRobot size={50} color="#077b32" />,
-      title: t('services.bots.title'),
-      description: t('services.bots.description'),
+      icon: <FaRobot size={50} color="#077b32" aria-hidden="true" />,
+      title: t('services.ai_rag.title'),
+      description: t('services.ai_rag.description'),
     },
     {
       id: 3,
-      icon: <FaCloud size={50} color="#077b32" />,
-      title: t('services.scraping.title'),
-      description: t('services.scraping.description'),
+      icon: <FaCloud size={50} color="#077b32" aria-hidden="true" />,
+      title: t('services.cloud.title'),
+      description: t('services.cloud.description'),
     },
   ];
 

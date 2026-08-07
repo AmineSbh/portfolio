@@ -30,31 +30,44 @@
   letter-spacing: 1px;
 }
 
+ /* Grille icône | (nom au-dessus de la barre) : les barres restent alignées
+    même quand un nom passe sur plusieurs lignes. */
 .skill {
-  display: flex;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: 12px;
+  row-gap: 6px;
   align-items: center;
-  justify-content: center;
+  text-align: left;
   margin-bottom: 20px;
-  gap: 10px;
+}
+
+.skill > svg {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  justify-self: center;
 }
 
 .skill p {
-  font-size: 1.2rem;
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1rem;
   margin: 0;
 }
 
 .progress-bar {
+  grid-column: 2;
+  grid-row: 2;
   width: 100%;
   height: 10px;
-  background-color: #444;
+  background-color: var(--progress-track);
   border-radius: 5px;
-  margin-top: 5px;
 }
 
 .progress {
   height: 100%;
   border-radius: 5px;
-  background-color: #077b32;
+  background-color: var(--accent);
 }
 
 .progress-bar .progress {
@@ -86,7 +99,7 @@
   }
 
   .skill p {
-    font-size: 1rem; /* Réduit la taille du texte */
+    font-size: 0.95rem; /* Réduit la taille du texte */
   }
 
   .progress-bar {
